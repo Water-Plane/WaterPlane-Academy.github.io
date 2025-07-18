@@ -306,6 +306,25 @@ navToggle.addEventListener('click', function() {
     navMenu.classList.toggle('active');
 });
 
+// Close mobile menu when clicking on a nav item
+document.querySelectorAll('.nav-menu .nav-item').forEach(item => {
+    item.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            navMenu.classList.remove('active');
+        }
+    });
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    if (window.innerWidth <= 768 && 
+        navMenu.classList.contains('active') && 
+        !navToggle.contains(e.target) && 
+        !navMenu.contains(e.target)) {
+        navMenu.classList.remove('active');
+    }
+});
+
 // Add mobile menu styles
 const mobileMenuStyle = document.createElement('style');
 mobileMenuStyle.textContent = `
