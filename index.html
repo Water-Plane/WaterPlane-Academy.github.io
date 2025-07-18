@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WaterPlane Academy - Complete Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-water"></i>
+                <h1>WaterPlane Academy</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-item active">Home</a>
+                <a href="#mathematics" class="nav-item">Mathematics</a>
+                <a href="#dsa" class="nav-item">DSA</a>
+                <a href="#ml" class="nav-item">ML/DL</a>
+                <a href="#progress" class="nav-item">Progress</a>
+            </div>
+            <div class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Master Mathematics & Computer Science</h1>
+            <p>From basic arithmetic to advanced machine learning - your complete learning journey</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3 id="completedCount">0</h3>
+                    <p>Completed Topics</p>
+                </div>
+                <div class="stat">
+                    <h3 id="totalCount">500+</h3>
+                    <p>Total Concepts</p>
+                </div>
+                <div class="stat">
+                    <h3 id="progressPercentage">0%</h3>
+                    <p>Overall Progress</p>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search any concept...">
+                <button id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mathematics Section -->
+    <section id="mathematics" class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-calculator"></i> Mathematics</h2>
+            <p>Complete mathematical foundations with practical applications</p>
+        </div>
+
+        <!-- Math Tables -->
+        <div class="topic-card">
+            <h3>Multiplication Tables (2-50)</h3>
+            <div class="table-container">
+                <div class="table-selector">
+                    <label>Select Table:</label>
+                    <select id="tableSelect">
+                        <option value="2">Table of 2</option>
+                    </select>
+                </div>
+<div id="multiplicationTable" class="math-table vertical"></div>
+            </div>
+            <div class="progress-checkbox">
+                <input type="checkbox" id="tables-progress" data-topic="multiplication-tables">
+                <label for="tables-progress">Mark as completed</label>
+            </div>
+        </div>
+
+        <!-- Roots Bento Grid -->
+        <div class="bento-grid">
+            <!-- Square Roots -->
+            <div class="topic-card bento-card">
+                <h3>Square Roots (1-50)</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Square Roots</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> The square root of a number is a value that, when multiplied by itself, gives the original number.</p>
+                        <p><strong>Real-life usage:</strong> Used in calculating distances, areas, engineering calculations, and financial modeling.</p>
+                        <a href="https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div id="squareRootsTable" class="math-table bento-table"></div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="sqrt-progress" data-topic="square-roots">
+                    <label for="sqrt-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <!-- Cube Roots -->
+            <div class="topic-card bento-card">
+                <h3>Cube Roots (1-50)</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Cube Roots</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> The cube root of a number is a value that, when multiplied by itself three times, gives the original number.</p>
+                        <p><strong>Real-life usage:</strong> Used in volume calculations, 3D modeling, engineering, and scientific calculations.</p>
+                        <a href="https://www.khanacademy.org/math/algebra/x2f8bb11595b61c86:rational-exponents-radicals" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div id="cubeRootsTable" class="math-table bento-table"></div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="cbrt-progress" data-topic="cube-roots">
+                    <label for="cbrt-progress">Mark as completed</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advanced Math Topics -->
+        <div class="topic-grid">
+            <div class="topic-card">
+                <h3>Linear Algebra</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Linear Algebra</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> Study of vectors, matrices, and linear transformations - a fundamental branch of mathematics that deals with linear equations, linear functions, and their representations in vector spaces through matrices.</p>
+                        <p><strong>Key concepts:</strong> Vector spaces, linear transformations, eigenvalues, eigenvectors, orthogonality, and singular value decomposition.</p>
+                        <p><strong>Real-life usage:</strong> Computer graphics, machine learning algorithms, quantum mechanics, data compression, engineering systems, structural analysis, and optimization problems.</p>
+                        <a href="https://www.khanacademy.org/math/linear-algebra" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="linear-algebra-progress" data-topic="linear-algebra">
+                    <label for="linear-algebra-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Calculus</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Calculus</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> Study of continuous change, including derivatives (rates of change) and integrals (accumulation). Calculus provides the mathematical framework for modeling systems that change continuously.</p>
+                        <p><strong>Key concepts:</strong> Limits, differentiation, integration, differential equations, series, multivariable calculus, and vector calculus.</p>
+                        <p><strong>Real-life usage:</strong> Physics simulations, engineering design, optimization problems, economic modeling, population dynamics, fluid mechanics, and understanding rates of change in various scientific fields.</p>
+                        <a href="https://www.khanacademy.org/math/calculus-1" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="calculus-progress" data-topic="calculus">
+                    <label for="calculus-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Statistics & Probability</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Statistics & Probability</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> Analysis of data and uncertainty quantification. Statistics involves collecting, analyzing, interpreting, and presenting data, while probability deals with measuring and understanding random phenomena.</p>
+                        <p><strong>Key concepts:</strong> Probability distributions, hypothesis testing, confidence intervals, regression analysis, experimental design, Bayesian inference, and stochastic processes.</p>
+                        <p><strong>Real-life usage:</strong> Data analysis, risk assessment, machine learning, scientific research, quality control, finance, healthcare, polling, economics, and decision-making under uncertainty.</p>
+                        <a href="https://www.khanacademy.org/math/statistics-probability" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="statistics-progress" data-topic="statistics">
+                    <label for="statistics-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Discrete Mathematics</h3>
+                <div class="explanation collapsible-content">
+                    <div class="content-summary">Click to learn about Discrete Mathematics</div>
+                    <div class="content-details">
+                        <p><strong>What is it:</strong> Study of discrete mathematical structures like graphs, sets, logic, and combinatorics. Unlike calculus, discrete mathematics deals with distinct, separate values rather than continuous ones.</p>
+                        <p><strong>Key concepts:</strong> Graph theory, set theory, combinatorics, recurrence relations, Boolean algebra, number theory, and formal languages.</p>
+                        <p><strong>Real-life usage:</strong> Computer science algorithms, cryptography, network analysis, digital circuits, optimization problems, scheduling, and data structures design.</p>
+                        <a href="https://www.khanacademy.org/computing/computer-science/algorithms" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="discrete-math-progress" data-topic="discrete-math">
+                    <label for="discrete-math-progress">Mark as completed</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Structures & Algorithms -->
+    <section id="dsa" class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-code"></i> Data Structures & Algorithms</h2>
+            <p>Master problem-solving with efficient data structures and algorithms</p>
+        </div>
+
+        <div class="topic-grid">
+            <div class="topic-card">
+                <h3>Arrays & Strings</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> Fundamental data structures for storing sequential data.</p>
+                    <p><strong>Real-life usage:</strong> Database management, text processing, and memory optimization.</p>
+                    <a href="https://www.geeksforgeeks.org/array-data-structure/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="arrays-progress" data-topic="arrays">
+                    <label for="arrays-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Linked Lists</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> Dynamic data structure where elements are stored in nodes.</p>
+                    <p><strong>Real-life usage:</strong> Music playlists, browser history, and undo functionality.</p>
+                    <a href="https://www.geeksforgeeks.org/linked-list-data-structure/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="linked-lists-progress" data-topic="linked-lists">
+                    <label for="linked-lists-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Stacks & Queues</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> LIFO and FIFO data structures for managing ordered data.</p>
+                    <p><strong>Real-life usage:</strong> Function calls, task scheduling, and expression evaluation.</p>
+                    <a href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="stacks-queues-progress" data-topic="stacks-queues">
+                    <label for="stacks-queues-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Trees & Graphs</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> Hierarchical and network data structures.</p>
+                    <p><strong>Real-life usage:</strong> File systems, social networks, and decision trees.</p>
+                    <a href="https://www.geeksforgeeks.org/binary-tree-data-structure/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="trees-graphs-progress" data-topic="trees-graphs">
+                    <label for="trees-graphs-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Sorting Algorithms</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> Algorithms to arrange data in a specific order.</p>
+                    <p><strong>Real-life usage:</strong> Search engines, database optimization, and data analysis.</p>
+                    <a href="https://www.geeksforgeeks.org/sorting-algorithms/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="sorting-progress" data-topic="sorting">
+                    <label for="sorting-progress">Mark as completed</label>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <h3>Dynamic Programming</h3>
+                <div class="explanation">
+                    <p><strong>What is it:</strong> Problem-solving technique using optimal substructure.</p>
+                    <p><strong>Real-life usage:</strong> Resource allocation, scheduling, and optimization problems.</p>
+                    <a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank" class="learn-more">Learn More</a>
+                </div>
+                <div class="progress-checkbox">
+                    <input type="checkbox" id="dp-progress" data-topic="dynamic-programming">
+                    <label for="dp-progress">Mark as completed</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Machine Learning & Deep Learning -->
+    <section id="ml" class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-robot"></i> Machine Learning & Deep Learning</h2>
+            <p>Master AI and machine learning concepts with practical applications</p>
+        </div>
+
+            <div class="ml-roadmap">
+                <h3>Machine Learning & Deep Learning Roadmap</h3>
+                <div class="roadmap-container">
+                    <div class="roadmap-section">
+                        <h4>1. Foundations</h4>
+                        <ul>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Mathematics</h5>
+                                    <p>Linear Algebra, Calculus, Statistics & Probability</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Programming</h5>
+                                    <p>Python, NumPy, Pandas, Data Visualization</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-section">
+                        <h4>2. Machine Learning Basics</h4>
+                        <ul>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Supervised Learning</h5>
+                                    <p>Linear Regression, Decision Trees, Random Forests, SVMs</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Unsupervised Learning</h5>
+                                    <p>Clustering, Dimensionality Reduction, PCA</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Model Evaluation</h5>
+                                    <p>Cross-validation, Metrics, Hyperparameter Tuning</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-section">
+                        <h4>3. Deep Learning Fundamentals</h4>
+                        <ul>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Neural Networks</h5>
+                                    <p>Perceptrons, Backpropagation, Activation Functions</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Frameworks</h5>
+                                    <p>TensorFlow, PyTorch, Keras</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-section">
+                        <h4>4. Deep Learning Architectures</h4>
+                        <ul>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Computer Vision</h5>
+                                    <p>CNNs, Image Classification, Object Detection, Segmentation</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Natural Language Processing</h5>
+                                    <p>RNNs, LSTMs, Transformers, BERT, GPT</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Generative Models</h5>
+                                    <p>GANs, VAEs, Diffusion Models</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="roadmap-section">
+                        <h4>5. Advanced Topics</h4>
+                        <ul>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Reinforcement Learning</h5>
+                                    <p>Q-Learning, Policy Gradients, Deep RL</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>MLOps</h5>
+                                    <p>Model Deployment, Monitoring, CI/CD for ML</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="roadmap-item">
+                                    <h5>Ethical AI</h5>
+                                    <p>Bias, Fairness, Explainability, Privacy</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="topic-grid">
+                <div class="topic-card">
+                    <h3>Linear Regression</h3>
+                    <div class="explanation">
+                        <p><strong>What is it:</strong> Supervised learning algorithm for predicting continuous values by modeling the relationship between input features and a target variable.</p>
+                        <p><strong>Key concepts:</strong> Ordinary Least Squares, Gradient Descent, Regularization (Ridge, Lasso), Feature Engineering, Multicollinearity</p>
+                        <p><strong>Real-life usage:</strong> Sales forecasting, price prediction, trend analysis, economic modeling, and predicting quantitative outcomes in various fields.</p>
+                        <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="progress-checkbox">
+                        <input type="checkbox" id="linear-regression-progress" data-topic="linear-regression">
+                        <label for="linear-regression-progress">Mark as completed</label>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Neural Networks</h3>
+                    <div class="explanation">
+                        <p><strong>What is it:</strong> Computational models inspired by the human brain consisting of interconnected nodes (neurons) that process and transmit information.</p>
+                        <p><strong>Key concepts:</strong> Neurons, Weights, Biases, Activation Functions, Backpropagation, Gradient Descent, Loss Functions, Overfitting</p>
+                        <p><strong>Real-life usage:</strong> Image recognition, speech processing, autonomous vehicles, medical diagnosis, recommendation systems, and natural language understanding.</p>
+                        <a href="https://www.deeplearning.ai/" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="progress-checkbox">
+                        <input type="checkbox" id="neural-networks-progress" data-topic="neural-networks">
+                        <label for="neural-networks-progress">Mark as completed</label>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Convolutional Neural Networks</h3>
+                    <div class="explanation">
+                        <p><strong>What is it:</strong> Specialized deep learning architecture designed for processing grid-like data such as images, utilizing convolutional layers to automatically learn spatial hierarchies of features.</p>
+                        <p><strong>Key concepts:</strong> Convolutional Layers, Pooling, Feature Maps, Receptive Field, Filters/Kernels, Transfer Learning, Data Augmentation</p>
+                        <p><strong>Real-life usage:</strong> Computer vision applications including image classification, object detection, facial recognition, medical imaging analysis, autonomous driving, and video analysis.</p>
+                        <a href="https://www.youtube.com/playlist?list=PLWKjhJtqVAbl5SlE6aBHzUVZ1e6q1Wz0v" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="progress-checkbox">
+                        <input type="checkbox" id="cnn-progress" data-topic="cnn">
+                        <label for="cnn-progress">Mark as completed</label>
+                    </div>
+                </div>
+
+                <div class="topic-card">
+                    <h3>Natural Language Processing</h3>
+                    <div class="explanation">
+                        <p><strong>What is it:</strong> AI field focused on enabling computers to understand, interpret, and generate human language in useful and meaningful ways.</p>
+                        <p><strong>Key concepts:</strong> Tokenization, Word Embeddings, Recurrent Neural Networks, Transformers, Attention Mechanisms, Language Models, Fine-tuning</p>
+                        <p><strong>Real-life usage:</strong> Chatbots, translation services, sentiment analysis, text summarization, question answering systems, voice assistants, and content generation.</p>
+                        <a href="https://www.nltk.org/" target="_blank" class="learn-more">Learn More</a>
+                    </div>
+                    <div class="progress-checkbox">
+                        <input type="checkbox" id="nlp-progress" data-topic="nlp">
+                        <label for="nlp-progress">Mark as completed</label>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Progress Tracking -->
+    <section id="progress" class="content-section">
+        <div class="section-header">
+            <h2><i class="fas fa-chart-line"></i> Your Learning Progress</h2>
+            <p>Track your journey through mathematics and computer science</p>
+        </div>
+
+        <div class="progress-dashboard">
+            <div class="progress-overview">
+                <div class="progress-circle">
+                    <svg width="150" height="150">
+                        <circle cx="75" cy="75" r="65" fill="none" stroke="#e0e0e0" stroke-width="10"/>
+<circle id="progressCircle" cx="75" cy="75" r="65" fill="none" stroke="#b8bb26" stroke-width="10" 
+                                stroke-dasharray="408" stroke-dashoffset="408"/>
+                    </svg>
+                    <div class="progress-text">
+                        <span id="progressText">0%</span>
+                        <small>Complete</small>
+                    </div>
+                </div>
+                <div class="progress-stats">
+                    <div class="stat-item">
+                        <h3 id="completedTopics">0</h3>
+                        <p>Topics Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3 id="totalTopics">20</h3>
+                        <p>Total Topics</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="progress-details">
+                <h3>Completed Topics</h3>
+                <div id="completedList" class="completed-topics"></div>
+                <button id="resetProgress" class="reset-btn">Reset All Progress</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+<p>&copy; 2024 WaterPlane Academy. Empowering learners worldwide.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
