@@ -23,7 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     populateTableSelector();
     initializeCollapsibleContent();
+    initializeToolbar();
     updateProgressDisplay();
+    window.addEventListener('load', () => {
+        document.body.classList.remove('preload');
+    });
 });
 
 // Navigation functionality
@@ -109,6 +113,7 @@ function generateCubeRootsTable() {
 function initializeTables() {
     generateSquareRootsTable();
     generateCubeRootsTable();
+    generateModalTables();
 }
 
 // Progress tracking functionality
@@ -418,5 +423,72 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
         .then(registration => console.log('SW registered:', registration))
         .catch(error => console.log('SW registration failed:', error));
+}
+
+// Toolbar and Modal functionality
+function initializeToolbar() {
+    const toolbarButtons = document.querySelectorAll('.toolbar-button');
+    toolbarButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modalId = button.getAttribute('data-modal');
+            openModal(modalId);
+        });
+    });
+}
+
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.style.display = 'block';
+        // Add event listeners to close the modal
+        const closeButton = modal.querySelector('.close-button');
+        closeButton.onclick = () => modal.style.display = 'none';
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    }
+}
+
+function generateModalTables() {
+    const modalTableSelect = document.getElementById('modalTableSelect');
+    for (let i = 2; i <= 50; i++) {
+        const option = document.createElement('option');
+        option.value = i;
+        option.textContent = `Table of ${i}`;
+        modalTableSelect.appendChild(option);
+    }
+    modalTableSelect.addEventListener('change', function() {
+        generateModalMultiplicationTable(parseInt(this.value));
+    });
+    generateModalMultiplicationTable(2);
+
+    const modalSquareRootsTable = document.getElementById('modalSquareRootsTable');
+    for (let i = 1; i <= 50; i++) {
+        const item = document.createElement('div');
+        item.className = 'table-item';
+        item.innerHTML = `√${i} = ${Math.sqrt(i).toFixed(3)}`;
+        modalSquareRootsTable.appendChild(item);
+    }
+
+    const modalCubeRootsTable = document.getElementById('modalCubeRootsTable');
+    for (let i = 1; i <= 50; i++) {
+        const item = document.createElement('div');
+        item.className = 'table-item';
+        item.innerHTML = `∛${i} = ${Math.cbrt(i).toFixed(3)}`;
+        modalCubeRootsTable.appendChild(item);
+    }
+}
+
+function generateModalMultiplicationTable(number) {
+    const table = document.getElementById('modalMultiplicationTable');
+    table.innerHTML = '';
+    for (let i = 1; i <= 10; i++) {
+        const item = document.createElement('div');
+        item.className = 'table-item';
+        item.innerHTML = `${number} × ${i} = ${number * i}`;
+        table.appendChild(item);
+    }
 }
 

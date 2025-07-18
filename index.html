@@ -8,7 +8,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body>
+<body class="preload">
+    <!-- Toolbar -->
+    <aside class="toolbar">
+        <button class="toolbar-button" data-modal="tables-modal"><i class="fas fa-table"></i></button>
+        <button class="toolbar-button" data-modal="sqrt-modal"><i class="fas fa-square-root-alt"></i></button>
+        <button class="toolbar-button" data-modal="cbrt-modal"><i class="fas fa-cube"></i></button>
+    </aside>
+
+    <!-- Modals -->
+    <div id="tables-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Multiplication Tables</h3>
+            <div class="table-container">
+                <div class="table-selector">
+                    <label for="modalTableSelect">Select Table:</label>
+                    <select id="modalTableSelect"></select>
+                </div>
+                <div id="modalMultiplicationTable" class="math-table"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sqrt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Square Roots</h3>
+            <div id="modalSquareRootsTable" class="math-table"></div>
+        </div>
+    </div>
+
+    <div id="cbrt-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3>Cube Roots</h3>
+            <div id="modalCubeRootsTable" class="math-table"></div>
+        </div>
+    </div>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
@@ -636,6 +673,7 @@
         </div>
     </footer>
 
+    <script src="roadmaps.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
